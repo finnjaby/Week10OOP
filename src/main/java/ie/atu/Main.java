@@ -4,14 +4,35 @@ package ie.atu;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Customer part1Customer = new Customer(
+                "Alice Smith",
+                "1 High Street",
+                "0851234567",
+                1001,
+                true
+        );
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Customer part2Customer = new Customer();
+        part2Customer.setName("Bob Jones");
+        part2Customer.setAddress("2 Low Street");
+        part2Customer.setPhoneNumber("0867654321");
+        part2Customer.setCustomerNumber(1002);
+        part2Customer.setMailingList(false);
+
+        System.out.println(part1Customer);
+        System.out.println(part2Customer);
+
+        PreferredCustomer pc = new PreferredCustomer();
+        pc.setName("Charlie Customer");
+        pc.setAddress("3 Middle Road");
+        pc.setPhoneNumber("0871112222");
+        pc.setCustomerNumber(2001);
+        pc.setMailingList(true);
+
+        System.out.println(pc);
+        pc.addLoyaltyPoints(700);
+        System.out.println(pc);
+        pc.addLoyaltyPoints(800);
+        System.out.println(pc);
     }
 }

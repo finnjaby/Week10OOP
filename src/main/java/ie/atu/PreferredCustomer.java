@@ -48,5 +48,13 @@ public class PreferredCustomer extends Customer{
         this.loyaltyPoints += points;
         updateDiscountLevel(loyaltyPoints);
     }
+    @Override
+    public String toString() {
+        return "PreferredCustomer{" +
+                "customer=" + super.toString() +
+                ", loyaltyPoints=" + loyaltyPoints +
+                ", discountLevel=" + discountLevel +
+                '}';
+    }
 
 }
