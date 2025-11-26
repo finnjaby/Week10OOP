@@ -4,19 +4,19 @@ public class PreferredCustomer extends Customer{
     private int loyaltyPoints;
     private double discountLevel;
 
-    public PreferredCustomer(String name, String address, String phoneNumber, int customerNumber, boolean mailingList, int loyaltyPoints) {
+    public PreferredCustomer(String name, String address, String phoneNumber, int customerNumber, boolean mailingList, int loyaltyPoints) {     //parameterised constructor
         super(name, address, phoneNumber, customerNumber, mailingList);
         this.loyaltyPoints = loyaltyPoints;
         this.discountLevel = updateDiscountLevel(loyaltyPoints);
 
     }
-    public PreferredCustomer(){
+    public PreferredCustomer(){     //default constructor
         super();
         this.loyaltyPoints = 0;
         this.discountLevel = 0;
     }
 
-    private double updateDiscountLevel(int loyaltyPoints){
+    private double updateDiscountLevel(int loyaltyPoints){      //discount level based on loyalty points
         if(loyaltyPoints <500){
             this.discountLevel = 0;
         }
@@ -34,12 +34,16 @@ public class PreferredCustomer extends Customer{
         }
         return discountLevel;
     }
+
+    //getters
     public int getLoyaltyPoints() {
         return loyaltyPoints;
     }
     public double getDiscountLevel() {
         return discountLevel;
     }
+
+    //setters
     public void setLoyaltyPoints(int loyaltyPoints) {
         this.loyaltyPoints = loyaltyPoints;
         updateDiscountLevel(loyaltyPoints);
@@ -49,7 +53,7 @@ public class PreferredCustomer extends Customer{
         updateDiscountLevel(loyaltyPoints);
     }
     @Override
-    public String toString() {
+    public String toString() {      //format output
         return "PreferredCustomer{" +
                 "customer=" + super.toString() +
                 ", loyaltyPoints=" + loyaltyPoints +

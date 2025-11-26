@@ -5,16 +5,18 @@ public class Person {
     private String address;
     private String phoneNumber;
 
-    public Person(String name, String address, String phoneNumber) {
+    public Person(String name, String address, String phoneNumber) { //parameterised constructor
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
     }
-    public Person(){
+    public Person(){        //default constructor
         this.name = "Not set";
         this.address = "Not set";
         this.phoneNumber = "Not set";
     }
+
+    //getters
     public String getName() {
         return name;
     }
@@ -24,6 +26,8 @@ public class Person {
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
+    //setters
     public void setName(String name) {
         this.name = name;
     }
@@ -33,7 +37,9 @@ public class Person {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    @Override
+
+
+    @Override       //format output
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
